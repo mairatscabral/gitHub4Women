@@ -3,19 +3,51 @@
 É um sistema de controle de versão distribuido (DVCS)  
 É gratuito e de codigo aberto  
 Foi projetado para lidar desde pequenos projetos a projetos muito grandes  
-É otimizado para operaçoes locais  
-branching ????  
-Snapshots, não deltas???
+É otimizado para operaçoes locais (projetado para funcionar de maneira eficiente no repositorio local(meu computador) nao tendo assim a necessidade de ficar se conectando o todo mundo ao repositorio remoto)  
+branching (ramificações, nao precisa mexer na main pode abrir ramificações para testar coisas isoladas como correção de bugs)  
+Snapshots, não deltas (como você consegue controlar o estado do arquivo)
+
+### o que é controle de versão?
+
+o controle de versao é um sistema que registra alteraçoes em um arquivo ou conjunto de arquivos ao longo do tempo para que você posssa recuperar versoes especificas posteriormente
+
 
 ### Controle de versão centralizado
+
+um unico servidor onde todas as versões do codigo ficam guardadas, o desenvolvedor precisa ir ate esse servidor para acessar o codigo, existe apenas um lugar onde o versionamento esta guardado
 
 ![alt text](image.png)
 
 ### Controle de versão distribuido
 
+nesse modelo cade dev tem uma copia completa do codigo e um historico das mudanças no seu proprio local (computador). Cada um tem um servidor completo no seu computador e quando quiser enviar as mudanças pro repositorio central também consegue fazer isso do seu computador, pode trabalhar offline também consegue. 
+
 ![alt text](image-1.png)
 
-### sanpshots vs deltas
+### quais as vantagens do git?
+
+snv -> exemplo de um sistema de versao que nao é o git
+o git é mais eficiente que os concorrentes
+o github é um diferencial
+é muito rapido com relação a protocolos
+
+
+### snapshots (instantaneos) vs deltas
+
+**snapshots** é como tirar uma foto do sistema ou do conjunto de dados, capturar tudo como esta em um momento especifico
+
+vantagem: capturar o estado completo do sistema/dados/pagina e a facilidade de conseguir recuperar isso e restaurar
+
+é essa abordagem que o git utiliza
+
+**deltas**
+
+apenas registra a mudança feita desde o ultimo snapshot/delta  
+anota apenas a diferença desde a ultima vez que você modificou algo  
+só resgistra a mudança da alteração
+
+vantagem: armazena menos informações porem se ouvir muitas mudanças fica dificil (complexo) de recurar um estado especifico de maneira completa.
+
 
 ![alt text](image-2.png)
 
@@ -25,19 +57,27 @@ Snapshots, não deltas???
 
 GitHub é um sistema de controle de versão (VCS)
 
-- siga para mudanças
+- rastreia as mudanças
 - backup de historico "snapshots"
 - time developer
 - flexivel local/DevOps tools
 
 ### Terminologia
 
-- Working tree
-- repository
-- hash
-- object
-- commit
-- branch
+- Working tree - lugar onde interagimos com o projeto (diretorio de arquivos)
+- Stagging Area - local onde coloca os arquivos que você considera prontos para serem rastreados pelo git
+- repository - local final onde você organiza seus arquivos existem os repositorios locais (seu computador) e repositorios remotos que sao armazenados remotamente e é acessivel a todos os membros do projeto.  
+- hash - mudança categorizada, codigo (identificador) unico para cada alteração (commit), é um hexadecimal, a impressao digital de cada alteração.
+- object -é uma das unidades fundamentais de armazenamento de dados no repositório. Todos os arquivos, pastas, commits e até mesmo referências são representados internamente como objetos. eles podem ser do tipo: 
+    - blob: armazena conteudo de arquivos (nao o nome ou caminho apenas o conteudo) e cada vez que um arquivo é adicionado ao repositorio seu conteudo é convertido em blob
+    - tree: representa um diretorio, contem referencias e blobs e a outros tree (subdiretorios, guarda também os nomes dos arquivos/diretorios e permissoes)
+    - commit: armazena uma referencia para a tree, o autor, a mensagem do commit e possivelmente commit pais (no caso de historio linear ou merges). representa um snapshot(foto) do repositorio naquele momento
+    - tag: um marcador para cada commit especifico, comumente usado para marcar versoes (como v1.0, v2.1)
+
+Os objetos sao a base de funcionamento do git garantindo integridade rastreabilidade e eficiencia, esles sao armazenados em .git/objects
+
+- commit - registro da mudança do arquivo, com data hora e comentario sobre. 
+- branch - 
 - remote
 - comandos, subcomandos, e opçoes
 

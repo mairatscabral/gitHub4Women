@@ -30,7 +30,7 @@ Cada pasta corresponde a uma semana do curso e contém:
 
 | Semana | Conteúdo                                                                                                              | Status          |
 |--------|-----------------------------------------------------------------------------------------------------------------------|-----------------|
-| 01     | Módulo 1 - Aula 1 - Introduction to Git and GitHub                                                                    | ✅ Concluído    |
+| 01     | [Módulo 1 - Aula 1 - Introduction to Git and GitHub](modulo1/anotacoes-modulo1.md)                                                               | ✅ Concluído    |
 | 01     | Módulo 1 - Aula 2 - Introduction to Git and GitHub                                                                    | 🔄 Em andamento |
 | 02     | Módulo 2 - Aula 3 - Working with GitHub Repositories                                                                  | ⏳ A iniciar    |
 | 02     | Módulo 2 - Aula 4 - Collaboration Feature                                                                             | ⏳ A iniciar    |
